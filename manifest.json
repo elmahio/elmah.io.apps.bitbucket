@@ -1,0 +1,40 @@
+{
+	"variables": [{
+		"key": "team",
+		"name": "Team",
+		"description": "",
+		"example": "elmahio",
+		"type": "text",
+		"required": true
+	},{
+		"key": "repo",
+		"name": "Repository",
+		"description": "The repository to create the new issue on",
+		"example": "slackbot",
+		"type": "text",
+		"required": true
+	},{
+		"key": "apikey",
+		"name": "API Key",
+		"description": "The API key of your team",
+		"example": "gIG4YyW4sgxfPvgdQrHof7IujFEGxu10",
+		"type": "text",
+		"required": true
+	}],
+	"rule": {
+		"title": "Create a new issue on Bitbucket on new errors",
+		"query": "isNew:true AND (severity:Error OR severity:Fatal)",
+		"then": {
+			"type": "http",
+			"url": "https://api.bitbucket.org/2.0/repositories/$team/$repo/issues",
+			"method": "post",
+			"body": "{ \"title\":\"$message\", \"body\": \"Time: $time\\nURL: $url\\nHostname: $hostName\\nStatus Code: $statusCode\\nType: $type\\nSource: $source\\nUser: $user\"}",
+			"contentType": "application/json",
+			"authentication": {
+				"type": "basic",
+				"username": "$team",
+				"password": "$apikey"
+			}			
+		}
+	}
+}
