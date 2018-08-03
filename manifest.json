@@ -34,7 +34,8 @@
 				"type": "basic",
 				"username": "$team",
 				"password": "$apikey"
-			}			
+			},
+			"testUrl": "https://api.bitbucket.org/2.0/repositories/$team/$repo"
 		}
 	}
 }
