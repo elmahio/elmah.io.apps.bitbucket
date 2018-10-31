@@ -18,7 +18,7 @@
 		"name": "API Key",
 		"description": "The API key of your team",
 		"example": "gIG4YyW4sgxfPvgdQrHof7IujFEGxu10",
-		"type": "text",
+		"type": "password",
 		"required": true
 	}],
 	"rule": {
