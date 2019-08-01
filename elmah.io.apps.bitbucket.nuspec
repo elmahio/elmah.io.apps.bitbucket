@@ -8,7 +8,8 @@
     <title>Bitbucket Integration</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Create an issue on Bitbucket when a new error is logged on elmah.io.</description>
-    <projectUrl>https://github.com/elmahio/elmah.io.apps.bitbucket</projectUrl>
+    <projectUrl>https://elmah.io/</projectUrl>
+    <repository type="git" url="https://github.com/elmahio/elmah.io.apps.bitbucket" />
     <iconUrl>https://elmah.io/images/appstore/elmah.io.apps.bitbucket.png</iconUrl>
 	<tags>Error Exception Reporting Management Logging ELMAH Diagnostics Tracing Bitbucket</tags>
   </metadata>
