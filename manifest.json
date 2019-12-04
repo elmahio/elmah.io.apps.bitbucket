@@ -24,7 +24,7 @@
 	}],
 	"rule": {
 		"title": "Create a new issue on Bitbucket on new errors",
-		"query": "isNew:true AND (severity:Error OR severity:Fatal)",
+		"query": "isNew:true AND (severity:Error OR severity:Fatal) AND NOT isUptime:true AND NOT isHeartbeat:true",
 		"then": {
 			"type": "http",
 			"url": "https://api.bitbucket.org/2.0/repositories/$team/$repo/issues",
